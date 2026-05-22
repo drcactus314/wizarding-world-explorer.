@@ -1,0 +1,24 @@
+@layer reset, abstracts, base, components, utilities;
+
+@layer reset {
+  @import "base/reset"; 
+}
+
+@layer abstracts {
+  @import "abstracts/variables";
+  @import "abstracts/mixins";
+}
+
+@layer base {
+  @import "base/base";
+  @import "base/fonts";
+}
+
+@layer components {
+  @import "components/buttons";
+  @import "components/card";
+  @import "components/categories";
+  @import "components/hero";
+  @import "components/popup";
+}
+

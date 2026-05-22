@@ -1,0 +1,39 @@
+.hero-section {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-image: url("../assets/images/hp-hero-image.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+  }
+  &__title {
+    font-family: "HarryPotter";
+    text-transform: uppercase;
+    color: var(--color-primary);
+    line-height: 1.25;
+    font-size: 80px;
+    text-align: center;
+    padding-top: 100px;
+  }
+  &__button {
+    font-family: "HarryPotter";
+    font-size: 18px;
+    line-height: 1.3;
+    padding: 18px 36px;
+    border-radius: 50px;
+    transition-duration: 0.2s;
+    background-color: var(--color-secondary);
+    &:hover{
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
+}
+
+
