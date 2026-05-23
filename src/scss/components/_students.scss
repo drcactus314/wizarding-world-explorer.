@@ -1,0 +1,14 @@
+.students-section {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--color-dark);
+  &__title{
+    text-align: center;
+    font-size: var(--font-size-h1);
+    font-family: var(--font-primary);
+    color: var(--color-primary);
+    padding-top: 100px;
+    text-transform: uppercase;
+  }
+}
