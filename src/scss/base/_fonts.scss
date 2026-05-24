@@ -3,3 +3,20 @@
     src: url('../assets/fonts/bluu-next-cyrillic/Web-PS/Bluu\ Next\ Cyrillic.woff2');
     font-weight: 600;
 };
+
+@font-face{
+    font-family: 'InterMedium';
+    src: url('../assets/fonts/Inter/Inter_18pt-Medium.ttf');
+    font-weight: 500;
+};
+
+@font-face{
+    font-family: 'InterLight';
+    src: url('../assets/fonts/Inter/Inter_18pt-ExtraLight.ttf');
+    font-weight: 900;
+};
+@font-face{
+    font-family: 'InterThin';
+    src: url('../assets/fonts/Inter/Inter_18pt-Thin.ttf');
+    font-weight: 900;
+};

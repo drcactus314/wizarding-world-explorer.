@@ -1,7 +1,7 @@
 .students-section {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--color-dark);
   &__title{
     text-align: center;
@@ -12,3 +12,14 @@
     text-transform: uppercase;
   }
 }
+.flex-container{
+  width: 1240px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+

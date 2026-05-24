@@ -1,0 +1,61 @@
+p {
+  margin: 0;
+}
+
+.students-card {
+  position: relative;
+  width: 295px;
+  height: 452px;
+
+
+  &__wrapper{
+    z-index: 0;
+    position: absolute;
+    inset: 0;
+    background:linear-gradient(0deg, #0F0F0F 15.35%, rgba(15, 15, 15, 0.74) 25.09%, rgba(15, 15, 15, 0) 50.35%);
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  &__description {
+    z-index: 1;
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+  }
+  &__name {
+    margin-bottom: 5px;
+    font-family: InterMedium;
+    color: var(--color-title);
+    font-size: 26px;
+    line-height: 1.4;
+  }
+  &__data {
+    font-family: InterLight;
+    color: var(--color-secondary);
+    font-size: var(--font-size);
+    line-height: 1.4;
+    margin-bottom: 15px;
+  }
+
+  &__interactive {
+    align-items: center;
+    display: flex;
+    gap: 3px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__button {
+    font-family: InterLight;
+    background-color: transparent;
+    color: var(--color-title);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
