@@ -1,5 +1,6 @@
 import { renderHomePage } from "./components/home";
-import { getStudents } from "./api/api";
+import { renderStaffSection } from "./components/staff";
+import { getStudents, getStaff } from "./api/api";
 import {
   renderStudentsSection,
   unPacked,
@@ -9,17 +10,30 @@ import {
 const mainContent = document.getElementById("app");
 mainContent.innerHTML = renderHomePage();
 
- const loadStudents = async() => {
-      const rawData = await getStudents();
-      const students = unPacked(rawData);
-      const studentsCard = createCard(students);
-      mainContent.innerHTML = renderStudentsSection(studentsCard);
-      const studentsToView = document.querySelector(".students")
-      studentsToView.scrollIntoView({
-      behavior: 'smooth',
-      block: "start"
-    });
-  }
+const loadStudents = async () => {
+  const rawData = await getStudents();
+  const students = unPacked(rawData);
+  const studentsCard = createCard(students);
+  mainContent.innerHTML = renderStudentsSection(studentsCard);
+  const studentsToView = document.querySelector(".students");
+  studentsToView.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
+
+const loadStaff = async ()=>{
+  const rawData = await getStaff();
+  const staff = unPacked(rawData);
+  const staffCard = createCard(staff);
+  mainContent.innerHTML = renderStaffSection(staffCard);
+  const staffToView = document.querySelector(".staff");
+  staffToView.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+  
+}
 
 mainContent.addEventListener("click", (e) => {
   console.log(e.target);
@@ -30,10 +44,10 @@ mainContent.addEventListener("click", (e) => {
       behavior: "smooth",
     });
   } else if (e.target.id === "students-button") {
-     loadStudents();
-    
+    loadStudents();
+  } else if (e.target.id === "staff-button") {
+    loadStaff();
   } else if (e.target.id === "back-button") {
     mainContent.innerHTML = renderHomePage();
-  } 
-   
+  }
 });

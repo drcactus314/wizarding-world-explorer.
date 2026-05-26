@@ -1,5 +1,5 @@
 export const unPacked = (data) => {
-  const student = data.map((item) => {
+  const staff = data.map((item) => {
     return {
       image: item.image,
       name: item.name,
@@ -8,11 +8,11 @@ export const unPacked = (data) => {
       dateOfBirth: item.dateOfBirth,
     };
   });
-  return student;
+  return staff;
 };
 
-export const createCard = (student) => {
-  const firstEightStud = student.slice(0, 8);
+export const createCard = (staff) => {
+  const firstEightStud = staff.slice(0, 8);
   const cardHtml = firstEightStud
     .map(
       (card) => `
@@ -38,17 +38,25 @@ export const createCard = (student) => {
   return cardHtml;
 };
 
-export const renderStudentsSection = (card) => {
-  return `
-    <div class="students">
+
+
+
+
+
+
+export const renderStaffSection = (card)=>{
+
+
+
+    return `
+    <div class="staff">
      <section class="card-section">
-      <h1 class="card-section__title">Студенти Гогвортсу</h1>
+      <h1 class="card-section__title">Співробітники Гогвортсу</h1>
       <div class="flex-container">
       ${card}
-           <button class="item-card__button" id="back-button">Повернутись назад</button> 
+           <button class="item-card__button" id="back-button">Повернутись назад</button>
       </div>
      </section>
     </div>
-    
-    `;
-};
+    `
+}

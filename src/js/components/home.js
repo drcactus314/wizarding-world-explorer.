@@ -40,8 +40,8 @@ export const renderHomePage =()=>{
                       class="card__image"
                     />
                   </figure>
-                  <button type="button" class="card__button button"  id="teachers-button">
-                    Вчителі Гогвортсу
+                  <button type="button" class="card__button button"  id="staff-button">
+                    Співробітники Гогвортсу
                   </button>
                 </article>
               </li>
