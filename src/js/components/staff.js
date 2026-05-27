@@ -47,7 +47,6 @@ export const createCard = (staff) => {
 export const renderStaffSection = (card)=>{
 
 
-
     return `
     <div class="staff">
      <section class="card-section">

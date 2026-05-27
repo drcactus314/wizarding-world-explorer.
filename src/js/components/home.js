@@ -1,4 +1,4 @@
-import { renderStudentsSection } from "./students";
+// import { renderStudentsSection } from "./students";
 
 export const renderHomePage =()=>{
 
@@ -54,7 +54,7 @@ export const renderHomePage =()=>{
                       class="card__image"
                     />
                   </figure>
-                  <button type="button" class="card__button button" id="faculty-button">
+                  <button type="button" class="card__button button" id="houses-button">
                     Факультети Гогвортсу
                   </button>
                 </article>

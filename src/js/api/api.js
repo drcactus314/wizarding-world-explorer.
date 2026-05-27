@@ -7,3 +7,8 @@ export const getStaff = async()=>{
     const response = await fetch('https://hp-api.onrender.com/api/characters/staff');
     return await response.json();
 }
+
+export const getHouses = async()=>{
+    const response = await fetch('https://hp-api.onrender.com/api/characters/house/gryffindor');
+    return await response.json();
+}
