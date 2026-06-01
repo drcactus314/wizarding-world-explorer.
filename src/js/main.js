@@ -1,7 +1,9 @@
 import { renderHomePage } from "./components/home";
-import { renderStaffSection, renderHouseSection, renderStudentsSection } from "./components/staff";
+import { renderStaffSection} from "./components/staff";
+import { renderHouseSection} from "./components/houses";
 import { getStudents, getStaff, getHouses } from "./api/api";
 import {
+  renderStudentsSection,
   unPacked,
   createCard,
 } from "./components/students";
