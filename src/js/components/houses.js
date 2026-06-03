@@ -1,6 +1,8 @@
+const housePage = document.querySelector(".houses");
+console.log(housePage);
 
+housePage.addEventListener("click", alert("Привіт"))
 export const createCard = (student) => {
-  
   const firstEightStud = student.slice(0, 8);
 
   const cardHtml = firstEightStud
@@ -57,5 +59,5 @@ export const renderHouseSection = (card) => {
       </div>
      </section>
     </div>
-  `
-}
+  `;
+};
