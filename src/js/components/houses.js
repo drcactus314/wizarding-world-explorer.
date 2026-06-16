@@ -1,27 +1,25 @@
 const housePage = document.querySelector(".houses");
-console.log(housePage);
 
-housePage.addEventListener("click", alert("Привіт"))
-export const createCard = (student) => {
-  const firstEightStud = student.slice(0, 8);
+export const createCard = (house) => {
+  
+  const firstHouses = house.slice(0, 8);  
 
-  const cardHtml = firstEightStud
-    .map(
+  const cardHtml = firstHouses.map(
       (card) => `
-      <div class="item-card">
-      <image class="item-card__image" src="${card.image}"/ >
-      <div class="item-card__wrapper"></div>
+    <div class="item-card">
+      <img class="item-card__image" src="${card.image}"/ >
+        <div class="item-card__wrapper"></div>
       <div class="item-card__description">
-      <p class="item-card__name">${card.name}</p>
+        <p class="item-card__name">${card.house}</p>
       <div class="item-card__data">
-       <p class="item-card__alter-name">${card.alternateNames[0]}</p>
-      <p class="item-card__house">${card.house}</p>
-      <p class="item-card__birth">${card.dateOfBirth}</p>
+        <p class="item-card__alter-name">${card.alternateNames[0]}</p>
+        <p class="item-card__house">${card.house}</p>
+        <p class="item-card__birth">${card.dateOfBirth}</p>
       </div>
-      <div class="item-card__interactive">
-      <button class="item-card__button">Більше інформації</button> 
-      <img src="./src/assets/images/hp-arrow-card.svg"/>
-      </div>
+        <div class="item-card__interactive">
+          <button class="item-card__button">Більше інформації</button>
+          <img src="./src/assets/images/hp-arrow-card.svg"/>
+        </div>
       </div>
     </div>
     `,

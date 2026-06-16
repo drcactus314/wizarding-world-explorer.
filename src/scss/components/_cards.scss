@@ -6,7 +6,18 @@ p {
   position: relative;
   width: 295px;
   height: 452px;
-
+  &__info-wrapper {
+    padding: 20px;
+    z-index: 3;
+    top: 0;
+    opacity: 0.9;
+    position: absolute;
+    display: none;
+    width: 295px;
+    height: 452px;
+    border-radius: 20px 20px;
+    background-color: var(--color-dark);
+  }
   &__wrapper {
     z-index: 0;
     position: absolute;
@@ -63,4 +74,20 @@ p {
       cursor: pointer;
     }
   }
+}
+.item-card:hover {
+  .item-card__info-wrapper {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.info-text, .info-data{
+  font-family: InterMedium;
+  color: var(--color-title);
+  font-size: 14px;
+  line-height: 1.4;
+}
+.info-data{
+  color: var(--color-secondary);
 }

@@ -16,8 +16,9 @@ export const createCard = (staff) => {
   const cardHtml = firstEightStud
     .map(
       (card) => `
-      <div class="item-card">
-      <image class="item-card__image" src="${card.image}"/ >
+      <div class="item-card ">
+      <div class="item-card-information">,mnbvcx</div>
+      <img class="item-card__image" src="${card.image}"/ >
       <div class="item-card__wrapper"></div>
       <div class="item-card__description">
       <p class="item-card__name">${card.name}</p>

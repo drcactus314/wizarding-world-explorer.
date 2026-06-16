@@ -1,7 +1,7 @@
 import { renderHomePage } from "./components/home";
 import { renderStaffSection} from "./components/staff";
 import { renderHouseSection} from "./components/houses";
-import { getStudents, getStaff, getHouses } from "./api/api";
+import { getStudents, getStaff, getCharacters } from "./api/api";
 import {
   renderStudentsSection,
   unPacked,
@@ -37,19 +37,20 @@ const loadStaff = async ()=>{
 }
 
 const loadHouses =async()=>{
-  const rawData = await getHouses();
+  const rawData = await getCharacters();
   const housesData = unPacked(rawData);
   const housesCard = createCard(housesData);
+
   mainContent.innerHTML = renderHouseSection(housesCard);
-  const staffToView = document.querySelector(".houses");
-  staffToView.scrollIntoView({
+  
+  const housesToView = document.querySelector(".houses");
+  housesToView.scrollIntoView({
     behavior: "smooth",
     block: "start",
   });
 }
 
 mainContent.addEventListener("click", (e) => {
-  console.log(e.target);
   if (e.target.classList.contains("hero-section__button")) {
     const category = document.querySelector(".categories-section");
     category.classList.remove("visually-hidden");
@@ -66,3 +67,6 @@ mainContent.addEventListener("click", (e) => {
     mainContent.innerHTML = renderHomePage();
   }
 });
+
+
+
