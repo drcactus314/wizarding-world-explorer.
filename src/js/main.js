@@ -8,8 +8,12 @@ import {
   createCard,
 } from "./components/students";
 
+import { filterHouses } from "./utils/filter";
+
 const mainContent = document.getElementById("app");
 mainContent.innerHTML = renderHomePage();
+
+filterHouses();
 
 const loadStudents = async () => {
   const rawData = await getStudents();
@@ -52,6 +56,7 @@ const loadHouses =async()=>{
 
 mainContent.addEventListener("click", (e) => {
   if (e.target.classList.contains("hero-section__button")) {
+    
     const category = document.querySelector(".categories-section");
     category.classList.remove("visually-hidden");
     category.scrollIntoView({
@@ -65,6 +70,14 @@ mainContent.addEventListener("click", (e) => {
     loadHouses();
   }else if (e.target.id === "back-button") {
     mainContent.innerHTML = renderHomePage();
+  }else if (e.target.id === "Hufflepuff") {
+    filterHouses(e.target.id);
+  }else if (e.target.id === "Gryffindor") {
+    filterHouses(e.target.id);
+  }else if (e.target.id === "Slytherin") {
+    filterHouses(e.target.id);
+  }else if (e.target.id === "Ravenclaw") {
+    filterHouses(e.target.id);
   }
 });
 

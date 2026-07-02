@@ -1,3 +1,4 @@
+
 const housePage = document.querySelector(".houses");
 
 export const createCard = (house) => {
@@ -34,21 +35,21 @@ export const renderHouseSection = (card) => {
      <section class="card-section">
       <h1 class="card-section__title">Персонажі в певному будинку</h1>
       <div class="card-section__filtered-list">
-      <button class="card-section__button">
+      <button id= "Gryffindor" class="card-section__button">
       <img class="card-section__image" src="./src/assets/images/hp-gryf.png"/>      
       Gryffindor
       </button>
-      <button class="card-section__button">
+      <button id= "Slytherin" class="card-section__button">
       <img class="card-section__image" src="./src/assets/images/hp-sliz.png"/>   
       Slytherin
       </button>
-      <button class="card-section__button">
+      <button id= "Hufflepuff" class="card-section__button">
       <img class="card-section__image" src="./src/assets/images/hp-rawen.png"/>   
-      Hafelpuff
+      Hufflepuff
       </button>
-      <button class="card-section__button">
+      <button id= "Ravenclaw" class="card-section__button">
       <img class="card-section__image" src="./src/assets/images/hp-haffel.png"/>
-      Rawenclaw
+      Ravenclaw
       </button>
       </div>
       <div class="flex-container">
