@@ -2,11 +2,9 @@ import { getCharacters } from "../api/api";
 
 const filterHouse = await getCharacters();
 
-export const filterHouses = async (houseName) => {
-  filterHouse.filter((item) => {
-    if (houseName === item.house){
-        console.log(item.house);
-    } 
+export const getFilterHouses = async (houseName) => {
+  const filteredArray = filterHouse.filter((item) => {
+    return houseName === item.house;
   });
-  return true;
+  return filteredArray;
 };

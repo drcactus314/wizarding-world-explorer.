@@ -1,6 +1,6 @@
 import { renderHomePage } from "./components/home";
-import { renderStaffSection} from "./components/staff";
-import { renderHouseSection} from "./components/houses";
+import { renderStaffSection } from "./components/staff";
+import { renderHouseSection } from "./components/houses";
 import { getStudents, getStaff, getCharacters } from "./api/api";
 import {
   renderStudentsSection,
@@ -8,12 +8,11 @@ import {
   createCard,
 } from "./components/students";
 
-import { filterHouses } from "./utils/filter";
+import { getFilterHouses } from "./utils/filter.js";
 
 const mainContent = document.getElementById("app");
-mainContent.innerHTML = renderHomePage();
 
-filterHouses();
+mainContent.innerHTML = renderHomePage();
 
 const loadStudents = async () => {
   const rawData = await getStudents();
@@ -27,7 +26,7 @@ const loadStudents = async () => {
   });
 };
 
-const loadStaff = async ()=>{
+const loadStaff = async () => {
   const rawData = await getStaff();
   const staff = unPacked(rawData);
   const staffCard = createCard(staff);
@@ -37,26 +36,31 @@ const loadStaff = async ()=>{
     behavior: "smooth",
     block: "start",
   });
-  
-}
+};
 
-const loadHouses =async()=>{
-  const rawData = await getCharacters();
-  const housesData = unPacked(rawData);
-  const housesCard = createCard(housesData);
+const loadHouses = async () => {
+  mainContent.innerHTML = renderHouseSection("");
 
-  mainContent.innerHTML = renderHouseSection(housesCard);
-  
   const housesToView = document.querySelector(".houses");
   housesToView.scrollIntoView({
     behavior: "smooth",
     block: "start",
   });
-}
+};
+
+const updateHouseCards = async (houseName) => {
+  const rawData = await getFilterHouses(houseName);
+  const houses = unPacked(rawData);
+  const houseCard = createCard(houses);
+  const cardContainer = document.querySelector(".card-section-flex");
+  if (cardContainer) {
+    cardContainer.innerHTML = `${houseCard}
+    <button class="item-card__button" id="back-button">Повернутись назад</button>`;
+  }
+};
 
 mainContent.addEventListener("click", (e) => {
   if (e.target.classList.contains("hero-section__button")) {
-    
     const category = document.querySelector(".categories-section");
     category.classList.remove("visually-hidden");
     category.scrollIntoView({
@@ -68,18 +72,15 @@ mainContent.addEventListener("click", (e) => {
     loadStaff();
   } else if (e.target.id === "houses-button") {
     loadHouses();
-  }else if (e.target.id === "back-button") {
+  } else if (e.target.id === "back-button") {
     mainContent.innerHTML = renderHomePage();
-  }else if (e.target.id === "Hufflepuff") {
-    filterHouses(e.target.id);
-  }else if (e.target.id === "Gryffindor") {
-    filterHouses(e.target.id);
-  }else if (e.target.id === "Slytherin") {
-    filterHouses(e.target.id);
-  }else if (e.target.id === "Ravenclaw") {
-    filterHouses(e.target.id);
+  } else if (e.target.id === "Hufflepuff") {
+    updateHouseCards(e.target.id);
+  } else if (e.target.id === "Gryffindor") {
+    updateHouseCards(e.target.id);
+  } else if (e.target.id === "Slytherin") {
+    updateHouseCards(e.target.id);
+  } else if (e.target.id === "Ravenclaw") {
+    updateHouseCards(e.target.id);
   }
 });
-
-
-

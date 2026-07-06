@@ -1,5 +1,7 @@
 export const unPacked = (data) => {
+  
   const student = data.map((item) => {
+   
     return {
       image: item.image,
       name: item.name,
@@ -23,7 +25,6 @@ export const unPacked = (data) => {
       alive: item.alive,
     };
   });
-
   return student;
 };
 

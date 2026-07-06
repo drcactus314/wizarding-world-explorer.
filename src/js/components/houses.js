@@ -1,9 +1,9 @@
 
 const housePage = document.querySelector(".houses");
 
-export const createCard = (house) => {
+export const createCard = (card) => {
   
-  const firstHouses = house.slice(0, 8);  
+  const firstHouses = card.slice(0, 8);  
 
   const cardHtml = firstHouses.map(
       (card) => `
@@ -33,6 +33,7 @@ export const renderHouseSection = (card) => {
   return `
    <div class="houses">
      <section class="card-section">
+      <div class="button-section-flex">
       <h1 class="card-section__title">Персонажі в певному будинку</h1>
       <div class="card-section__filtered-list">
       <button id= "Gryffindor" class="card-section__button">
@@ -52,7 +53,8 @@ export const renderHouseSection = (card) => {
       Ravenclaw
       </button>
       </div>
-      <div class="flex-container">
+      </div>
+      <div class="flex-container card-section-flex">
       ${card}
            <button class="item-card__button" id="back-button">Повернутись назад</button>
       </div>
